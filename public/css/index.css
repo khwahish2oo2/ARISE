@@ -137,7 +137,7 @@ nav .fa
 
 .About
 {
-    width: 100%;
+    width: 80%;
     margin: auto;
     text-align: center;
     padding-top: 100px;
@@ -150,7 +150,7 @@ h1{
 
 .row
 {
-    margin: 5% 150px 10px 150px;
+    margin-top: 5%;
     display: flex;
     justify-content : space-between;
 }
@@ -190,7 +190,7 @@ h3{
 
 .Services
 {
-    width: 100%;
+    width: 80%;
     margin: auto;
     text-align: center;
     padding-top: 50px;
@@ -203,7 +203,7 @@ h1{
 
 .row
 {
-    margin: 5% 150px 10px 150px;
+    margin-top: 5%;
     display: flex;
     justify-content : space-between;
 }
@@ -261,8 +261,9 @@ h3{
 
 /* Reviews  */
 
-.testimonial_m{
-    margin: 0px;
+.testimonial_m
+{   
+    margin: 0%;
     padding-top: 10px;
     display: flex;
     justify-content: center;
@@ -273,7 +274,7 @@ h3{
   }
   
   .container{
-    width: 1200px;
+    width:80%;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
