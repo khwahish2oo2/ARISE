@@ -37,12 +37,12 @@ h1 {
 }
 
 .card {
-    width: 510px;
+    width: 100%;
     background: transparent;
     padding: 10px;
     border-radius: 15px;
     border-color: rgb(28, 16, 2);
-    text-align: left;
+    text-align: center;
     color: #333;
 }
 
@@ -62,7 +62,6 @@ h1 {
 }
 
 label {
-    display: block;
     width: 180px;
     background: #d6560ccf;
     color: #fff;

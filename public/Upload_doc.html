@@ -1,0 +1,43 @@
+<! DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <title>Upload_document</title>
+        <link rel="stylesheet" href="css/Upload_doc.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="js/jquery-1.8.2.min.js"></script>
+
+        <script src="js/login.js"></script>
+        <script>
+            $("#next").click(function() //This to check in Login page is Email id trying to be login is registered and if yes then is the password correct
+              {  
+                window.location.replace("/Question.html");
+              })  
+        </script>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="form-box">
+                <form name="frmProfile" method="post" enctype="multipart/form-data" >
+                    <h2>Upload Document</h2>
+                    <p id="response" ></p>
+                    <div>
+                        <input type="file" id="input-doc" name="aadhaarCard" style="font-size: large; margin: 50px 0px 20px 0px;">
+                    </div>
+                    <div> 
+                        <p>
+                            Do you want your document to be stored for future use?
+                        </p>
+                        <input type="radio" name="store" value="yes"> YES
+                        <input type="radio" name="store" value="no"> NO
+                    <div class="button" >
+                        <button type="Submit" class="btn" id="next" formaction="/entrepreneur-save">NEXT</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+
+    </html>

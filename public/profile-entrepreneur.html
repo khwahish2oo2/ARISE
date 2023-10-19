@@ -51,100 +51,19 @@
 <body>
     <section class="header" id="Home">
         <div class="hero">  
-            <h1>Profile</h1>            
-            <form name="frmProfile" method="post" enctype="multipart/form-data">
-
-                <input type="hidden" id="hdn1" name="hdn1">
+            <h1>Profile</h1> 
+            <center>        
+            <form name="frmProfile" method="post" enctype="multipart/form-data" >
                 <input type="hidden" id="hdn2" name="hdn2">
-
-                <button type="button" class="main-btn" id="btnFetch">AUTO-FILL</button>
-                <div class="row">
-                    <div class="card">
-                        <h2>Personal Details</h2>
-                        <div class="row">
-                            <div>
-                                <img id="img1" src="pics/NoPhoto.png">
-                                <label for="input-photo">Choose Photo</label>
-                                <input type="file" id="input-photo" name="profilePic" style="display :none">
-                            </div>
-                            <div>
-                                <img id="img2" src="pics/noDoc.png">
-                                <label for="input-doc">Choose Document</label>
-                                <input type="file" id="input-doc" name="aadhaarCard" style="display :none">
-                            </div>
-                        </div>
-
-                        <div class="input-box">
-                            <h4>Email: </h4>
-                            <input type="email" class="form-control" readonly id="EmailId" name="EmailId">
-                        </div>
-                        <div class="input-box">
-                            <h4>Name: </h4>
-                            <input type="text" class="form-control" aria-label="FLname"
-                                id="Name" name="Name">
-                        </div>
-                        <div class="input-box">
-                            <h4>Phone: </h4>
-                            <input type="text" class="form-control" id="contact" name="contact"
-                                placeholder="+91 70096-83067">
-                        </div>
-                        <div class="input-box">
-                            <h4>Address: </h4>
-                            <input type="text" class="form-control" id="Address" name="Address"
-                                placeholder="Permanet Address">
-                        </div>
-                        <div class="input-box">
-                            <h4>Country: </h4>
-                            <input type="text" class="form-control" id="Country" name="Country">
-                        </div>
-                    </div>
-                    <div class="card">
-                        <h2>Business Details</h2>
-                        <div class="input-box">
-
-
-                            <h4>Category: </h4>
-                            <select class="form-select" size="5" id="Category" name="Category" multiple id="">
-                                <option selected>Choose...</option>
-                                <option value="Pharmaceutical">Pharmaceutical</option>
-                                <option value="Technology">Technology</option>
-                                <option value="Mechanical">Mechanical</option>
-                                <option value="Infrastructure">Infrastructure</option>
-                                <option value="Healthcare">Healtcare</option>
-                                <option value="Furniture">Furniture</option>
-                                <option value="Food">Food</option>
-                                <option value="Financial Services">Financial Services</option>
-                                <option value="E-commerce">E-commerce</option>
-                            </select>
-                        </div>
-
-                        <div class="input-box">
-                            <h4>Company: </h4>
-                            <input type="text" class="form-control" id="Company" name="Company" placeholder="xyz">
-                        </div>
-
-                        <div class="input-box">
-                            <h4>Established In: </h4>
-                            <input type="text" class="form-control" id="EstdIn" name="EstdIn">
-                        </div>
-
-                        <div class="input-box">
-                            <h4>Expected Sales: </h4>
-                            <input type="text" class="form-control" id="Sales" name="Sales">
-                        </div>
-
-                        <div class="input-box">
-                            <h4>Team Size: </h4>
-                            <input type="text" class="form-control" id="prtnr" name="prtnr">
-                        </div>
-
-                        <div class="input-box">
-                            <h4>Other Information: </h4>
-                            <textarea class="form-control" id="OtherInfo" name="OtherInfo" rows="5"></textarea>
-                        </div>
+                <div class="card">
+                    <div>
+                        <img id="img2" src="pics/noDoc.png">
+                        <label for="input-doc">Choose Document</label>
+                        <input type="file" id="input-doc" name="aadhaarCard" style="display :none">
                     </div>
                 </div>
-                <div class="row2">
+            
+                    <div class="row2">
                     <div>
                         <button type="Submit" class="main-btn" formaction="/entrepreneur-save">SAVE</button>
                     </div>
@@ -153,6 +72,7 @@
                     </div>
                 </div>
             </form>
+        </center>
         </div>
 
     </section>
