@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Question</title>
+    <link rel="stylesheet" href="css/question.css">
+</head>
+<body>
+    <h1 style="margin:20px">ARISE</h1>
+    <div class="main">
+    <div class="question">
+       
+            <h1 >Your Question</h1>
+            <textarea placeholder="Enter your question here...." rows = "5" cols = "60" name = "description" type="text" ></textarea>
+                
+             <br>
+             <input type = "submit" value = "submit" class="button"/>
+            
+    </div>
+    <h2 style="margin-bottom: 2px;">Answer:</h2>
+    <div class="answer">
+        
+    </div>
+    <!-- <button onclick="window.location.href = 'question.html';">Next Question</button> -->
+    <div style="text-align: center;margin-top: 5px;">
+    <input type="submit" onClick="myFunction()" value="Next Question" class="button" />
+</div>
+  <script>
+    function myFunction() {
+      window.location.href = "question.html";
+    }
+  </script>
+</div>
+</body>
+</html>
