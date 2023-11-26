@@ -8,19 +8,21 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="js/jquery-1.8.2.min.js"></script>
 
-        <script src="js/login.js"></script>
-        <script>
+        
+
+        <!-- <script>
             $("#next").click(function()
               {  
                 window.location.replace("/question.html");
               })  
-        </script>
+        </script> -->
     </head>
 
     <body>
         <div class="container">
             <div class="form-box">
-                <form name="frmProfile" method="post" enctype="multipart/form-data" >
+                <form id="formProfile" name="frmProfile" method="post" enctype="multipart/form-data" >
+
                     <h2>Upload Document</h2>
                     <p id="response" ></p>
                     <div>
@@ -32,13 +34,14 @@
                         </p>
                         <input type="radio" name="store" value="yes"> YES
                         <input type="radio" name="store" value="no"> NO
-                    <div class="button" >
-                        <button type="submit" class="btn" id="next" >NEXT</button>
+                      <div class="button" >
+                        <button type="button"  class="btn" id="next" >Submit</button>
                         <!-- formaction="/entrepreneur-save" -->
                     </div>
                 </form>
             </div>
         </div>
     </body>
-
+    <script type="module" src="./js/upload_doc.js"  defer></script>
+    
     </html>
