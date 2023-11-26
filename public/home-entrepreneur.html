@@ -39,7 +39,7 @@
             <div class="nav-links" id="navLinks">
                 <i class="fa fa-times" onclick="hideMenu()"></i>
                 <ul>
-                    <li><a href="index.html">EXPLORE</a></li>
+                    <li><a href="index.html" id="back">EXPLORE</a></li>
                     <li><a href="notifications.html">NOTIFICATIONS</a></li>
                     <li><a href="profile.html">PROFILE</a></li>
                     <button type="button" class="main-btn" id="log" >LOG OUT</button>
@@ -78,6 +78,7 @@
         var navLinks=document.getElementById("navLinks");
         var textBox=document.getElementById("textBox");
         var fas=document.getElementById("fas");
+       
         function showMenu()
         {
             fas.style.display= "none";
@@ -89,6 +90,18 @@
             textBox.style.left="50%";
             navLinks.style.left="-200px";
         }
+        let signOut=()=>{
+            sessionStorage.removeItem("user-creds");
+            sessionStorage.removeItem("user-info");
+            window.location.href="login.html";
+        }
+        let logOut=()=>{
+            sessionStorage.removeItem("user-creds");
+            sessionStorage.removeItem("user-info");
+            
+        }
+       window.addEventListener("click",signOut);
+       window.addEventListener('back',logOut);
     </script>
 </body>
 </html>
