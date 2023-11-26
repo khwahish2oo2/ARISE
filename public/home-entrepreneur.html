@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
     <script src="js/jquery-1.8.2.min.js"></script>
-    <script>
+    <!-- <script>
       $(document).ready(function(){
         $("#log").click(function()
         {
@@ -30,7 +30,7 @@
           window.location.replace("/Upload_doc.html");
         })
       })
-    </script>
+    </script> -->
 
 </head>
 <body>
@@ -39,9 +39,9 @@
             <div class="nav-links" id="navLinks">
                 <i class="fa fa-times" onclick="hideMenu()"></i>
                 <ul>
-                    <li><a href="#Explore">EXPLORE</a></li>
+                    <li><a href="index.html">EXPLORE</a></li>
                     <li><a href="notifications.html">NOTIFICATIONS</a></li>
-                    <li><a href="profile-entrepreneur.html">PROFILE</a></li>
+                    <li><a href="profile.html">PROFILE</a></li>
                     <button type="button" class="main-btn" id="log" >LOG OUT</button>
                 </ul>
             </div>
@@ -60,15 +60,15 @@
         <div class="row">
             <div class="Explore-col">
                 <img src="pics/LFQnA.webp" alt="">
-                <button type="button" class="btn" id="long">Long Form QnA</button>
+                <a href="Upload_doc.html"><button type="button" class="btn" id="long">Long Form QnA</button></a>
             </div>
             <div class="Explore-col">
                 <img src="pics/ShortForm2.webp" alt="">
-                <button type="button" class="btn" id="short">Short Form QnA</button>
+                <a href="Upload_doc.html"><button type="button" class="btn" id="short">Short Form QnA</button></a>
             </div>
             <div class="Explore-col">
                 <img src="pics/tabular.jpg" alt="">
-                <button type="button" class="btn" id="tabular">Tabular Form QnA</button>
+                <a href="Upload_doc.html"><button type="button" class="btn" id="tabular">Tabular Form QnA</button></a>
             </div>
         </div>
     </section>
