@@ -119,8 +119,10 @@ i{
 
 #response
 {
-    color: red;
+    color: rgb(15, 15, 15);
     font-weight: 600;
     position: relative;
-    top: 25px
+    top: 10px;
+    bottom: 10px;
+    
 }
