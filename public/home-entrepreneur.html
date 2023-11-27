@@ -79,8 +79,7 @@
         var textBox=document.getElementById("textBox");
         var fas=document.getElementById("fas");
        
-        function showMenu()
-        {
+        function showMenu(){
             fas.style.display= "none";
             textBox.style.left="-200px";
             navLinks.style.left="0";
@@ -93,15 +92,15 @@
         let signOut=()=>{
             sessionStorage.removeItem("user-creds");
             sessionStorage.removeItem("user-info");
-            window.location.href="login.html";
+            window.location.href="index.html";
         }
         let logOut=()=>{
             sessionStorage.removeItem("user-creds");
-            sessionStorage.removeItem("user-info");
-            
+            sessionStorage.removeItem("user-info");  
+                   
         }
-       window.addEventListener("click",signOut);
-       window.addEventListener('back',logOut);
+       document.getElementById("log").addEventListener("click",signOut);
+       document.getElementById("back").addEventListener('click',logOut);
     </script>
 </body>
 </html>

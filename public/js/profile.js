@@ -7,7 +7,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebas
     // Your web app's Firebase configuration
     // For Firebase JS SDK v7.20.0 and later, measurementId is optional
     import { getStorage,ref,  listAll, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-storage.js";
-   
+    import { getAuth,signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
     const firebaseConfig = {
         apiKey: "AIzaSyBTeb_PvF8zbxl4IbJNuLUBJ59bydYIIX0",
         authDomain: "login-database-a039a.firebaseapp.com",
@@ -26,16 +26,14 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebas
 // Initialize Firebase Authentication and get a reference to the service
        
         const storage = getStorage();
-     
-
-
-    document.addEventListener("DOMContentLoaded", () => {
-        const userInfo = JSON.parse(sessionStorage.getItem("user-info"));
-        document.getElementById("display").innerHTML = userInfo.fullName;
-
-    });
-    
         
+        document.addEventListener("DOMContentLoaded", () => {
+            const userInfo = JSON.parse(sessionStorage.getItem("user-info"));
+            console.log("userInfo",userInfo.fullName);
+            document.getElementById("display").innerHTML = userInfo.fullName;
+    
+        });
+      
         const userCreds = JSON.parse(sessionStorage.getItem("user-creds"));
         // Reference to the root of your storage bucket
         const storageRef = ref(storage, `${userCreds.uid}/`); // Replace '/' with your desired path
