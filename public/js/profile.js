@@ -30,7 +30,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebas
         document.addEventListener("DOMContentLoaded", () => {
             const userInfo = JSON.parse(sessionStorage.getItem("user-info"));
             console.log("userInfo",userInfo.fullName);
-            document.getElementById("display").innerHTML = userInfo.fullName;
+            document.getElementById("display").innerHTML = "User Name: " + userInfo.fullName;
     
         });
       
