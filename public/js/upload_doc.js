@@ -100,7 +100,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebas
     console.log("status",store);
     // if(store.checked)
     // {
-    submitButton.addEventListener("click", docUpload);
+        submitButton.addEventListener("click", docUpload);
     // }
     // else
     // {
