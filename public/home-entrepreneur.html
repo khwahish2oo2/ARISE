@@ -96,8 +96,7 @@
         }
         let logOut=()=>{
             sessionStorage.removeItem("user-creds");
-            sessionStorage.removeItem("user-info");  
-                   
+            sessionStorage.removeItem("user-info");      
         }
        document.getElementById("log").addEventListener("click",signOut);
        document.getElementById("back").addEventListener('click',logOut);
