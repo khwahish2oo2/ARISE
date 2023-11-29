@@ -32,16 +32,27 @@
                         <p>
                             Do you want your document to be stored for future use?
                         </p>
-                        <input type="radio" name="store" value="yes"> YES
-                        <input type="radio" name="store" value="no"> NO
+                        <input type="radio"  value="yes" id="Yes"> YES
+                        <input type="radio"  value="no" id="NO" > NO
+                        <div id="myProgress" style="display:none">
+                            <div id="myBar" style="margin:10px;">10%</div>
+                          </div>
                       <div class="button" >
                         <button type="button"  class="btn" id="next" >Submit</button>
+
                         <!-- formaction="/entrepreneur-save" -->
+                    </div>
+                    <div>
+                        <p id="response"></p>
                     </div>
                 </form>
             </div>
         </div>
     </body>
-    <script type="module" src="./js/upload_doc.js"  defer></script>
+    <script>
+      
+    </script>
+
+    <script type="module" src="./js/upload_doc.js" ></script>
     
     </html>
