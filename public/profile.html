@@ -3,13 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-   
+    <title>Document</title>   
 </head>
 <style>
-    .dv{
-        border-radius: 20px;
-    }
+    button {
+    margin-top: 10px; /* Adjust spacing as needed */
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
 </style>
 
 <body>
@@ -17,8 +25,9 @@
     <div>
          <p id="display" style="font-size: 25px; font-weight:800;"></p>
     </div>
-    <div class="dv" >hi</div>
-    <div id="files" style="border-radius : 10px; outline-color: black;">
+    <div>
+        <p id="files"></p>
+        <button id="openDocumentButton">Open Document</button>
     </div>
 </div>
     

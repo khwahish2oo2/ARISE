@@ -53,8 +53,9 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebas
                     var linkText = document.createTextNode(`${fileName}`);
                     a.appendChild(linkText);
                     a.title = "my title text";
+                    a.style="width:800px; height:200px; font-size:20px; border-style: solid; background-color: black; margin: 50px " ;
                     a.href = url;
-                    a.style.display = "block";
+                    //a.style.display = "block";
                     document.getElementById("files").insertAdjacentElement('afterend',a);
                    // document.body.appendChild(a);
                 console.log('File URL:', url);
