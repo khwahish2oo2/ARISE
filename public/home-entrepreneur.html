@@ -10,28 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
     <script src="js/jquery-1.8.2.min.js"></script>
-    <!-- <script>
-      $(document).ready(function(){
-        $("#log").click(function()
-        {
-          localStorage.clear();
-          window.location.replace("/index.html");
-        })
-        $("#long").click(function()
-        {
-          window.location.replace("/Upload_doc.html");
-        })
-        $("#short").click(function()
-        {
-          window.location.replace("/Upload_doc.html");
-        })
-        $("#tabular").click(function()
-        {
-          window.location.replace("/Upload_doc.html");
-        })
-      })
-    </script> -->
-
 </head>
 <body>
     <section class="header" id="Home">
@@ -92,13 +70,13 @@
         let signOut=()=>{
             sessionStorage.removeItem("user-creds");
             sessionStorage.removeItem("user-info");
-            window.location.href="index.html";
+            window.location.replace("index.html");
         }
         let logOut=()=>{
             sessionStorage.removeItem("user-creds");
             sessionStorage.removeItem("user-info");      
         }
-       document.getElementById("log").addEventListener("click",signOut);
+        document.getElementById("log").addEventListener("click",signOut);
        document.getElementById("back").addEventListener('click',logOut);
     </script>
 </body>
