@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARISE</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/index.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <section class="header" id="Home">
+        <nav>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="#Home">HOME</a></li>
+                    <li><a href="#About">ABOUT US</a></li>
+                    <li><a href="#Services">SERVICES</a></li>
+                    <li><a href="#Reviews">REVIEWS</a></li>
+                    <li><a href="#Contact">CONTACT US</a></li>
+                    <li><a href="{{ url_for('login') }}" target="_blank">LOGIN</a></li>
+                    <li><a href="{{ url_for('register') }}" target="_blank">REGISTER</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" id="fas" onclick="showMenu()"></i>
+        </nav>  
+        
+        <div class="text-box" id="textBox">
+            <h1>Welcome to ARISE</h1>
+            <p>"AI-based Reading and Inquiry Support Engine"</p>
+            <a href="{{ url_for('login') }}" class="main-btn"> Get Started </a>
+        </div>
+    </section>
+
+    <section class="About" id="About">
+        <h1 class="headings" >About ARISE</h1>
+        <div class="row">
+            <div class="About-col">
+                <img src="{{ url_for('static', path='/pics/tabular2.jpg') }}" alt="">
+            </div>
+            <div class="About-col">
+                <p align="justify">
+                    <b> AI-based Reading and Inquiry Support Engine</b> (ARISE) is an automated question answering system for textbooks, research papers, and other educational materials. The system will take any kind of document as an input and generate answers to a set of questions related to the content. ARISE is able to perform three tasks based on the requirement of user ,i.e., long form, short-form and tabular form question-answering. <br>
+                    <b> The Key Features: </b> <br>
+                    <b>1. Efficiency:</b> Can quickly and accurately generate answers. Users can save time and effort in searching for information manually. <br>
+                    <b>2. Accessibility: </b>Individuals with varying levels of expertise or different learning styles can easily access and comprehend complex information. <br>
+                    <b>3. Personalized Learning:</b> Users can ask specific questions related to their areas of interest or areas they find challenging, facilitating a deeper understanding of the subject matter. <br>
+                    <b>4. Enhanced Learning Experience: </b> interface promoting an interactive learning experience.
+                </p>
+            </div> 
+        </div>
+    </section>
+
+
+    
+    <section class="Services" id="Services">
+        <h1 class="headings">Our Services</h1>
+        <div style="margin-bottom: 115px;" class="row">
+            <div class="Services-col">
+                <img src="{{ url_for('static', path='/pics/LFQnA.webp') }}" alt="">
+                <h3>Long Form QnA</h3>
+                <p align="justify">
+                    Provide accurate and detailed answers for the provided question. The answer will be closely related to the document provided.
+                </p>
+            </div>
+            <div class="Services-col">
+                <img src="{{ url_for('static', path='/pics/ShortForm2.webp') }}" alt="">
+                <h3>Short Form QnA</h3>
+                <p align="justify">
+                    Provide precise and most suitable one line answers for the provided question. Helps in getting brief information on the required topic.
+                </p>
+            </div>
+            <div class="Services-col">
+                <img src="{{ url_for('static', path='/pics/tabular.jpg') }}" alt="">
+                <h3>Tabular Form QnA</h3>
+                <p align="justify">
+                    Helps in extracting the required information from the data provided in tabular form i.e. Excel Sheet, csv files etc. 
+                </p>
+            </div>           
+            
+        </div>
+    </section>
+
+
+    <section class="Testimonials" id="Reviews">
+        <h1 style="text-align: center; margin-bottom: 120px; margin-top: 40px; " class="headings"> What Our Users Say!!</h1>
+       
+    <div class="testimonial_m">
+       
+        <div class="container">
+          
+            <div class="box">
+                <div class="imgBox">
+                    <img src="{{ url_for('static', path='/pics/WhatsApp Image 2022-03-14 at 16.20.08.jpeg') }}" width="100%" height="100%">
+                </div>
+                <p>As an entrepreneur, I used this website Pitch-Line for finding investors to raise money in my project. 
+                    And it was a great experience while using this website. Excellent interface of the website.
+                </p>
+                <h4>Dr. Anoop Verma</h4>
+            </div>
+            <div class="box">
+                <div class="imgBox">
+                    <img src="{{ url_for('static', path='/pics/sir.jpg') }}" width="100%" height="100%">
+                </div>
+                <p>As an entrepreneur, I used this website Pitch-Line for finding investors to raise money in my project. 
+                    And it was a great experience while using this website. Excellent interface of the website.
+                </p>
+                <h4>Mr. Sudhanshu Sharma</h4>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- <section class="Reviews" id="Reviews">
+        <h1 style="background: #c56c2852">What Our Users Say</h1>
+        <div class="row">
+            <div class="Reviews-col">
+                <img src="pics/WhatsApp Image 2022-03-14 at 16.20.08.jpeg" alt="">
+                <div>
+                    
+                    <h3>Khwahish Mittal</h3>
+                    <p>
+                        As an entrepreneur, I used this website Pitch-Line for finding investors to raise money in my project. 
+                        And it was a great experience while using this website. Excellent interface of the website.
+                    </p>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-half" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="Reviews-col">
+                <img src="pics/sir.jpg" alt="">
+                <div>
+                    <h3>Rajesh K. Bansal</h3>
+                    <p>
+                        A very user-friendly website. Got to know many new entrepreneurs joining Pitch-Line with their unique business model ideas. 
+                        Loved to know about the advancement of technology and new innovations. 
+                    </p>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+        
+    </section> -->
+
+    <section class="footer" id="Contact">
+        <h4>Contact Us</h4>
+        <p>Final-Year Undergraduate pursuing B.E. in Electronics and Computer Engineering <br> at
+            Thapar Institute of Engineering and Technology, Patiala. <br> <b>Contact:</b> +91 70096-83067    <b>Email:</b>
+            kmittal2_be20@thapar.edu</p>
+        <div class="icons">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-linkedin"></i>
+        </div>
+    </section>
+
+    <script>
+        var navLinks=document.getElementById("navLinks");
+        var textBox=document.getElementById("textBox");
+        var fas=document.getElementById("fas");
+        function showMenu()
+        {
+            fas.style.display= "none";
+            textBox.style.left="-200px";
+            navLinks.style.left="0";
+        }
+        function hideMenu(){
+            fas.style.display= "block";
+            textBox.style.left="50%";
+            navLinks.style.left="-200px";
+        }
+    </script>
+</body>
+</html>
