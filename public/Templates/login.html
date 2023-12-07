@@ -83,7 +83,7 @@
                             }))
                             sessionStorage.setItem("user-creds", JSON.stringify(credentials.user))
                             console.log("Sign in succesful");
-                            //window.location.href = 'home-entrepreneur.html';
+                            window.location.replace("{{ url_for('OurServices') }}");
                         }
                     })
                     console.log(credentials);

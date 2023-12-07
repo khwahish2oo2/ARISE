@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website</title>
-    <link rel="stylesheet" href="/ARISE/public/static/css/home.css">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/home.css') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
-    <script src="/ARISE/public/static/js/jquery-1.8.2.min.js"></script>
+    <script src="{{ url_for('static', path='/js/jquery-1.8.2.min.js') }}"></script>
 </head>
 <body>
     <section class="header" id="Home">
@@ -17,9 +17,9 @@
             <div class="nav-links" id="navLinks">
                 <i class="fa fa-times" onclick="hideMenu()"></i>
                 <ul>
-                    <li><a href="index.html" id="back">EXPLORE</a></li>
+                    <li><a href="{{ url_for('hello') }}" id="back">EXPLORE</a></li>
                     <li><a href="notifications.html">NOTIFICATIONS</a></li>
-                    <li><a href="profile.html">PROFILE</a></li>
+                    <li><a href="{{ url_for('YourProfile') }}">PROFILE</a></li>
                     <button type="button" class="main-btn" id="log" >LOG OUT</button>
                 </ul>
             </div>
@@ -37,16 +37,16 @@
     <section class="Explore" id="Explore">
         <div class="row">
             <div class="Explore-col">
-                <img src="pics/LFQnA.webp" alt="">
-                <a href="Upload_doc.html"><button type="button" class="btn" id="long">Long Form QnA</button></a>
+                <img src="{{ url_for('static', path='/pics/LFQnA.webp') }}" alt="">
+                <a href="{{ url_for('Upload') }}"><button type="button" class="btn" id="long">Long Form QnA</button></a>
             </div>
             <div class="Explore-col">
-                <img src="pics/ShortForm2.webp" alt="">
-                <a href="Upload_doc.html"><button type="button" class="btn" id="short">Short Form QnA</button></a>
+                <img src="{{ url_for('static', path='/pics/ShortForm2.webp') }}" alt="">
+                <a href="{{ url_for('Upload') }}"><button type="button" class="btn" id="short">Short Form QnA</button></a>
             </div>
             <div class="Explore-col">
-                <img src="pics/tabular.jpg" alt="">
-                <a href="Upload_doc.html"><button type="button" class="btn" id="tabular">Tabular Form QnA</button></a>
+                <img src="{{ url_for('static', path='/pics/tabular.jpg') }}" alt="">
+                <a href="{{ url_for('Upload') }}"><button type="button" class="btn" id="tabular">Tabular Form QnA</button></a>
             </div>
         </div>
     </section>
