@@ -70,7 +70,7 @@
         let signOut=()=>{
             sessionStorage.removeItem("user-creds");
             sessionStorage.removeItem("user-info");
-            window.location.replace("index.html");
+            window.location.replace("{{ url_for('hello') }}");
         }
         let logOut=()=>{
             sessionStorage.removeItem("user-creds");
