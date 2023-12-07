@@ -11,7 +11,7 @@ Original file is located at
 
 !pip install -q transformers==4.4.2
 
-import torch
+# import torch
 torch.__version__
 
 !pip install torch-scatter -f https://pytorch-geometric.com/whl/torch-2.1.0+cu118.html
