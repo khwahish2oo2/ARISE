@@ -30,7 +30,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebas
         document.addEventListener("DOMContentLoaded", () => {
             const userInfo = JSON.parse(sessionStorage.getItem("user-info"));
             console.log("userInfo",userInfo.fullName);
-            document.getElementById("display").innerHTML = "User Name: " + userInfo.fullName;
+            document.getElementById("display").innerHTML =userInfo.fullName;
     
         });
       
@@ -39,6 +39,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebas
         const storageRef = ref(storage, `${userCreds.uid}/`); // Replace '/' with your desired path
 
 // List all items at the root
+document.addEventListener('DOMContentLoaded', function () {
         listAll(storageRef)
         .then((result) => {
             result.items.forEach((itemRef) => {
@@ -50,15 +51,31 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebas
                     const fileRef = ref(storage, url);
 
                     const fileName = fileRef.name;
-                    var linkText = document.createTextNode(`${fileName}`);
-                    a.appendChild(linkText);
+
+                     // Create a folder icon using Font Awesome
+                    var folderIcon = document.createElement('i');
+                    folderIcon.className = 'fas fa-folder';
+                    folderIcon.style="font-size:100px;color:black;margin-left:20px;margin-right:20px";
+                    a.appendChild(folderIcon);
+ 
+                     // Create a text node for the file name
+                    //  var linkText = document.createTextNode(` ${fileName}`);
+                    //  a.appendChild(linkText);
+ 
                     a.title = "my title text";
-                    a.style="width:800px; height:200px; font-size:20px; border-style: solid; background-color: black; margin: 50px " ;
                     a.href = url;
-                    //a.style.display = "block";
-                    document.getElementById("files").insertAdjacentElement('afterend',a);
-                   // document.body.appendChild(a);
-                console.log('File URL:', url);
+                    document.getElementById("files").insertAdjacentElement('afterend', a);
+                
+                    console.log('File URL:', url);
+                //     var linkText = document.createTextNode(`${fileName}`);
+                //     a.appendChild(linkText);
+                //     a.title = "my title text";
+                //     a.style="fas fa-folder " ;
+                //     a.href = url;
+                //     //a.style.display = "block";
+                //     document.getElementById("files").insertAdjacentElement('afterend',a);
+                //    // document.body.appendChild(a);
+                // console.log('File URL:', url);
                 
             })
                 .catch((error) => {
@@ -69,5 +86,6 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebas
         .catch((error) => {
             console.error('Error listing items:', error);
         });
+    });
 
 

@@ -9,14 +9,14 @@ Original file is located at
 **INSTALLATION**
 """
 
-!pip install -q transformers==4.4.2
+# !pip install -q transformers==4.4.2
 
 import torch
 torch.__version__
 
-!pip install torch-scatter -f https://pytorch-geometric.com/whl/torch-2.1.0+cu118.html
-!pip install -q -U trl transformers accelerate git+https://github.com/huggingface/peft.git
-!pip install -q datasets bitsandbytes einops wandb
+# !pip install torch-scatter -f https://pytorch-geometric.com/whl/torch-2.1.0+cu118.html
+# !pip install -q -U trl transformers accelerate git+https://github.com/huggingface/peft.git
+# !pip install -q datasets bitsandbytes einops wandb
 
 from transformers import pipeline
 import pandas as pd

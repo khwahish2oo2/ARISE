@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/c57ef9cf9b.js" crossorigin="anonymous"></script>
     <title>Document</title>   
 </head>
-<style>
-    button {
+<!-- <style>
+    /* button {
     margin-top: 10px; /* Adjust spacing as needed */
     padding: 10px;
     background-color: #3498db;
@@ -17,19 +18,26 @@
 
 button:hover {
     background-color: #2980b9;
-}
-</style>
+} */
+</style> -->
 
 <body>
-    <div style="margin:50px">
-    <div>
-         <p id="display" style="font-size: 25px; font-weight:800;"></p>
-    </div>
-    <div>
+    <h1 style="text-align: center;">Your Documents</h1>
+    <div >
+    
+        <i class='fas fa-user-alt' style='font-size:68px;color:red; position: absolute;margin:10px;
+        top: 8px;
+        right: 16px;'></i>
+        <!-- <i class="fas fa-folder" style='font-size:70px;'></i> -->
+        <p id="display" style="font-size: 15px; font-weight:800;position: absolute;margin:10px;
+        top: 80px;
+        right: 16px; "></p>
+   </div>
+    <div style="margin:50px;display:flex;">
         <p id="files"></p>
-        <button id="openDocumentButton">Open Document</button>
+        <!-- <button id="openDocumentButton">Open Document</button> -->
     </div>
-</div>
+
     
 </body>
 <script type="module" src="{{ url_for('static', path='/js/profile.js') }}"></script>
