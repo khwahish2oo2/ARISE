@@ -29,23 +29,7 @@ async def reset_password(request: Request):
 
 
 
-@app.post("/login")
-async def login(
-    email: str = Form(...),
-    password: str = Form(...),
-):
-    try:
-        
-        user = auth.get_user_by_email(email)
 
-        # Verify the password (optional, Firebase does this by default)
-        # If you want additional password verification, you can use:
-        # auth.verify_password_hash(password, user.password_hash)
-
-        return JSONResponse(content={"message": "Login successful"}, status_code=200)
-
-    except auth.AuthError as e:
-        raise HTTPException(status_code=401, detail=f"Login failed: {e}")
     
     
 
