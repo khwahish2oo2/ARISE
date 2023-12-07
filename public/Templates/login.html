@@ -73,39 +73,40 @@
 
         let SignInUser = evt => {
             evt.preventDefault();
-            // signInWithEmailAndPassword(auth, email.value, password.value)
-            //     .then((credentials) => {
-            //         get(child(dbref, 'UsersAuthList/' + credentials.user.uid)).then((snapshot) => {
-            //             if (snapshot.exists) {
-            //                 sessionStorage.setItem("user-info", JSON.stringify({
-            //                     fullName: snapshot.val().fullName,
-            //                     firstSchool: snapshot.val().firstSchool
-            //                 }))
-            //                 sessionStorage.setItem("user-creds", JSON.stringify(credentials.user))
-            //                 window.location.href = 'home-entrepreneur.html';
-            //             }
-            //         })
-            //         console.log(credentials);
-            //     }).catch((error) => {
-            //         alert(error.message);
-            //         console.log(error.code);
-            //         console.log(error.message);
-            //     })
-            const formData = new FormData(document.getElementById('SignInForm'));
+            signInWithEmailAndPassword(auth, email.value, password.value)
+                .then((credentials) => {
+                    get(child(dbref, 'UsersAuthList/' + credentials.user.uid)).then((snapshot) => {
+                        if (snapshot.exists) {
+                            sessionStorage.setItem("user-info", JSON.stringify({
+                                fullName: snapshot.val().fullName,
+                                firstSchool: snapshot.val().firstSchool
+                            }))
+                            sessionStorage.setItem("user-creds", JSON.stringify(credentials.user))
+                            console.log("Sign in succesful");
+                            //window.location.href = 'home-entrepreneur.html';
+                        }
+                    })
+                    console.log(credentials);
+                }).catch((error) => {
+                    alert(error.message);
+                    console.log(error.code);
+                    console.log(error.message);
+                })
+            // const formData = new FormData(document.getElementById('SignInForm'));
 
-    fetch('/login', {
-        method: 'POST',
-        body: formData,
-    })
-    .then(response => response.json())
-    .then(data => {
-        // Handle the login response or redirect to the home page
-        console.log(data.message);
-    })
-    .catch(error => {
-        alert("Login failed. Please try again.");
-        console.error('Error:', error);
-    });
+    // fetch('/login', {
+    //     method: 'POST',
+    //     body: formData,
+    // })
+    // .then(response => response.json())
+    // .then(data => {
+    //     // Handle the login response or redirect to the home page
+    //     console.log(data.message);
+    // })
+    // .catch(error => {
+    //     alert("Login failed. Please try again.");
+    //     console.error('Error:', error);
+    // });
         }
         const btn = document.getElementById('login')
         window.onload = function () {
