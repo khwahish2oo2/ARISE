@@ -4,37 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/c57ef9cf9b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/hello.css') }}">
     <title>Document</title>   
 </head>
-<!-- <style>
-    /* button {
-    margin-top: 10px; /* Adjust spacing as needed */
-    padding: 10px;
-    background-color: #3498db;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
 
-button:hover {
-    background-color: #2980b9;
-} */
-</style> -->
+
+    
 
 <body>
-    <h1 style="text-align: center;">Your Documents</h1>
+    <h1 style="text-align: center;">My Documents</h1>
     <div >
     
-        <i class='fas fa-user-alt' style='font-size:68px;color:red; position: absolute;margin:10px;
+        <i class='fas fa-user-alt' style='font-size:68px;color:#d068179c; position: absolute;margin:10px;
         top: 8px;
-        right: 16px;'></i>
+        right: 16px;' > </i>
         <!-- <i class="fas fa-folder" style='font-size:70px;'></i> -->
         <p id="display" style="font-size: 15px; font-weight:800;position: absolute;margin:10px;
         top: 80px;
-        right: 16px; "></p>
+        right: 23px; text-align: center;"></p>
+       
    </div>
-    <div style="margin:50px;display:flex;">
-        <p id="files"></p>
+    <div style="margin:50px;display:flex;flex-direction:row;flex-wrap:wrap;text-align:center;" id="files">
+        
         <!-- <button id="openDocumentButton">Open Document</button> -->
     </div>
 

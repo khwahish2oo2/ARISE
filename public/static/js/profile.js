@@ -48,23 +48,29 @@ document.addEventListener('DOMContentLoaded', function () {
                 .then((url) => {
 
                     var a = document.createElement('a');
+                    var text=document.createElement('p');
+                    var div=document.createElement('div');
+                    div.style="display:inline-block;width:300px;text-align:center;overflow:hidden;"
                     const fileRef = ref(storage, url);
 
                     const fileName = fileRef.name;
+                    div.appendChild(a);
 
                      // Create a folder icon using Font Awesome
                     var folderIcon = document.createElement('i');
                     folderIcon.className = 'fas fa-folder';
-                    folderIcon.style="font-size:100px;color:black;margin-left:20px;margin-right:20px";
+                    folderIcon.style="font-size:200px;color:grey;margin-left:20px;margin-right:20px";
                     a.appendChild(folderIcon);
+                    
  
                      // Create a text node for the file name
-                    //  var linkText = document.createTextNode(` ${fileName}`);
-                    //  a.appendChild(linkText);
+                    text.textContent=fileName;
+                    text.style="margin:0px;"
+                    div.appendChild(text);
  
-                    a.title = "my title text";
+                    a.title = "my document";
                     a.href = url;
-                    document.getElementById("files").insertAdjacentElement('afterend', a);
+                    document.getElementById("files").appendChild(div);
                 
                     console.log('File URL:', url);
                 //     var linkText = document.createTextNode(`${fileName}`);
