@@ -1,5 +1,5 @@
 
-from fastapi import FastAPI, Request, Form, HTTPException
+from fastapi import FastAPI, Request, Form, HTTPException,UploadFile, File
 from fastapi.responses import HTMLResponse
 from fastapi.responses import JSONResponse
 from fastapi.templating import Jinja2Templates
@@ -51,7 +51,6 @@ async def Upload(request: Request):
 async def question(request: Request):
    return templates.TemplateResponse("question.html", {"request": request})
 
-
-
-
-
+@app.post("/uploadfile")
+async def uploadFile(file: UploadFile = File(...)):
+   return {"filename": file.filename}

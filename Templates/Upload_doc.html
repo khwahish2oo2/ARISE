@@ -21,12 +21,12 @@
     <body>
         <div class="container">
             <div class="form-box">
-                <form id="formProfile" name="frmProfile" method="post" enctype="multipart/form-data" >
+                <form action="/uploadfile" method="post" enctype="multipart/form-data" >
 
                     <h2>Upload Document</h2>
                     <p id="response" ></p>
                     <div>
-                        <input type="file" id="input-doc" name="aadhaarCard" style="font-size: large; margin: 50px 0px 20px 0px;">
+                        <input type="file" id="file" name="file" accept=".pdf">
                     </div>
                     <div> 
                         <p>
@@ -38,7 +38,7 @@
                             <div id="myBar" style="margin:10px;">10%</div>
                           </div>
                       <div class="button" >
-                        <button type="button"  class="btn" id="next" >Ask your Question</button>
+                        <button type="submit">Ask Your Question</button>
 
                         <!-- formaction="/entrepreneur-save" -->
                     </div>
@@ -49,10 +49,10 @@
             </div>
         </div>
     </body>
-    <script>
+    <!-- <script>
       
-    </script>
+    </script> -->
 
-    <script type="module" src="{{ url_for('static', path='/js/upload_doc.js') }}" ></script>
+    <!-- <script type="module" src="{{ url_for('static', path='/js/upload_doc.js') }}" ></script> -->
     
     </html>
