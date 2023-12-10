@@ -4,6 +4,8 @@ from fastapi.responses import HTMLResponse
 from fastapi.responses import JSONResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
+from long_format import output
+from utils import extract_text_func
 
 from firebase_admin import auth, db, initialize_app, credentials
 
@@ -53,4 +55,5 @@ async def question(request: Request):
 
 @app.post("/uploadfile")
 async def uploadFile(file: UploadFile = File(...)):
-   return {"filename": file.filename}
+   document = extract_text_func(file)
+   return {"filename": len(document)}

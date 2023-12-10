@@ -1,0 +1,1 @@
+from utils.extract_text import extract_text_func
