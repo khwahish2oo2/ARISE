@@ -49,7 +49,7 @@ os.environ["REPLICATE_API_TOKEN"] = REPLICATE_API_TOKEN
 def get_rerank(texts,queries):
     result_list = []
     for q in queries:
-        if q=='':
+        if q.strip()=="":
             continue
         results = co.rerank(query=q, documents=texts, top_n=3, model='rerank-english-v2.0')
         result_list.extend(results)
@@ -73,8 +73,8 @@ async def get_queries(question,texts):
         Original question: {question}""",
     )
     llm = Replicate(
-        model="a16z-infra/llama13b-v2-chat:df7690f1994d94e96ad9d568eac121aecf50684a0b0963b25a41cc40061269e5",
-        model_kwargs={"temperature": 0.75, "max_length": 500, "top_p": 1},
+        model="meta/llama-2-70b-chat:02e509c789964a7ea8736978a43525956ef40397be9033abf9fd2badfe68c9e3",
+        model_kwargs={"temperature": 0.3, "max_length": 500, "top_p": 1},
     )
 
     llm_chain = LLMChain(llm=llm, prompt=QUERY_PROMPT, output_parser=output_parser)
@@ -128,8 +128,8 @@ async def output(document,question):
 
     #pass through llm and get output
     llm = Replicate(
-        model="a16z-infra/llama13b-v2-chat:df7690f1994d94e96ad9d568eac121aecf50684a0b0963b25a41cc40061269e5",
-        model_kwargs={"temperature": 0.75, "max_length": 500, "top_p": 1},
+        model="meta/llama-2-70b-chat:02e509c789964a7ea8736978a43525956ef40397be9033abf9fd2badfe68c9e3",
+        model_kwargs={"temperature": 0.5, "max_length": 1000, "top_p": 1},
     )
     QUERY_PROMPT = PromptTemplate(
         input_variables=["question","context"],

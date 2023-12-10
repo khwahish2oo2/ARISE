@@ -54,6 +54,7 @@ async def question(request: Request):
    return templates.TemplateResponse("question.html", {"request": request})
 
 @app.post("/uploadfile")
-async def uploadFile(file: UploadFile = File(...)):
+async def uploadFile(file: UploadFile = File(...), question: str = Form(...)):
    document = extract_text_func(file)
-   return {"filename": len(document)}
+   value = await output(document,question)
+   return {"output": value}
