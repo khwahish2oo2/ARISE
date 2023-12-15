@@ -5,6 +5,7 @@ from fastapi.responses import JSONResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from long_format import output
+from tabular import output_table
 from utils import extract_text_func
 
 from firebase_admin import auth, db, initialize_app, credentials
@@ -49,6 +50,10 @@ async def YourProfile(request: Request):
 async def Upload(request: Request):
    return templates.TemplateResponse("Upload_doc.html", {"request": request})
 
+@app.get("/Upload_Table", response_class=HTMLResponse)
+async def Upload_Table(request: Request):
+   return templates.TemplateResponse("Upload_doc_table.html",{"request":request})
+
 @app.get("/question", response_class=HTMLResponse)
 async def question(request: Request):
    return templates.TemplateResponse("question.html", {"request": request})
@@ -58,3 +63,8 @@ async def uploadFile(file: UploadFile = File(...), question: str = Form(...)):
    document = extract_text_func(file)
    value = await output(document,question)
    return {"output": value}
+
+@app.post("/uploadfiletable")
+async def uploadFileTable(file: UploadFile = File(...), question: str = Form(...)):
+   answer = output_table()
+   return {"output": answer}
