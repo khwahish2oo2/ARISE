@@ -39,7 +39,6 @@ def output_table():
         logging_dir='./logs',
         logging_steps=10,
     )
-
     trainer = Trainer(
         model=model,
         args=training_args,
