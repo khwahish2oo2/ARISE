@@ -4,10 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/question.css') }}">
+    <!-- <link rel="stylesheet" href="/ARISE/static/css/question.css"> -->
     <title>Result Page</title>
 </head>
 <body>
-    <h1>Result for long format</h1>
-    <p>{{ result_text }}</p>
+    <h1 class="heading">ARISE</h1>
+    <!-- <div class="main"> -->
+    <h1 style="text-align: center;">Long form</h1>
+
+    <div class="question">
+        <h3 style="display: inline-block;">Question Asked: </h3>
+        <p style="display: inline-block;">{{question}}</p>
+    <!-- <p>{{question}}</p> -->
+</div>
+<h3 style="text-align: center;margin:0px;">Answer:</h3>
+<div class="answer">
+  
+    <p align="justify">{{ result_text }}</p>
+    <!-- <p>{{ result_text }}</p> -->
+</div>
+<!-- </div> -->
 </body>
 </html>
