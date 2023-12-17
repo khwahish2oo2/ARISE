@@ -66,13 +66,13 @@ async def question(request: Request):
 async def uploadFile(request:Request,file: UploadFile = File(...), question: str = Form(...)):
    document = extract_text_func(file)
    value = await output(document,question)
-   print("done")
    return templates.TemplateResponse("result_long.html", {"request":request,"result_text": value})
 
 @app.post("/uploadfiletable")
-async def uploadFileTable(file: UploadFile = File(...), question: str = Form(...)):
+async def uploadFileTable(request:Request,file: UploadFile = File(...), question: str = Form(...)):
    answer = output_table()
-   return {"output": answer}
+   return templates.TemplateResponse("result_tabular.html", {"request":request,"result_text": answer})
+
 
 @app.post("/uploadfileshort")
 async def uploadFileShort(paragraph: str = Form(...), question: str = Form(...)):
