@@ -1,0 +1,50 @@
+<! DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <title>Upload_document</title>
+        <link rel="stylesheet" href="{{ url_for('static', path='/css/Upload_doc.css') }}">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="{{ url_for('static', path='/js/jquery-1.8.2.min.js') }}"></script>
+
+        
+
+        <!-- <script>
+            $("#next").click(function()
+              {  
+                window.location.replace("/question.html");
+              })  
+        </script> -->
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="form-box">
+                <form action="/uploadfileshort" method="post" enctype="multipart/form-data" >
+                    <br>
+                    <label for="question">Enter your question:</label>
+                    <input type="text" name="question" required>
+                    <br>
+                    <label for="paragraph">Enter your paragraph:</label>
+                    <input type="text" name="paragraph" required>
+                    <div>
+                      <div class="button" >
+                        <button type="submit">Ask Your Question</button>
+
+                        <!-- formaction="/entrepreneur-save" -->
+                    </div>
+                    <div>
+                        <p id="response"></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+    <!-- <script>
+      
+    </script> -->
+
+    <!-- <script type="module" src="{{ url_for('static', path='/js/upload_doc.js') }}" ></script> -->
+    
+    </html>
