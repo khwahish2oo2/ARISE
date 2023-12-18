@@ -21,34 +21,36 @@
     <body>
         <div class="container">
             <div class="form-box">
-                <form action="/uploadfile" method="post" enctype="multipart/form-data" >
-
+                <form action="/uploadfile" method="post" enctype="multipart/form-data">
                     <h2>Upload Document</h2>
-                    <p id="response" ></p>
+                    <p id="response"></p>
+                    <br>
                     <div>
                         <input type="file" id="file" name="file" accept=".pdf">
                     </div>
                     <br>
-                    <label for="question">Enter your question:</label>
-                    <input type="text" name="question" required>
-                    <br>
-                    <div> 
-                        <p>
+                    <div>
+                        <!-- <p>
                             Do you want your document to be stored for future use?
                         </p>
-                        <input type="radio"  value="yes" id="Yes"> YES
-                        <input type="radio"  value="no" id="NO" > NO
+                        <input type="radio" value="yes" id="Yes"> YES
+                        <input type="radio" value="no" id="NO"> NO
                         <div id="myProgress" style="display:none">
                             <div id="myBar" style="margin:10px;">10%</div>
-                          </div>
-                      <div class="button" >
-                        <button type="submit">Ask Your Question</button>
+                        </div>
+                        <br> -->
+                        <label for="question">Enter your question:</label>
+                        <input type="text" name="question" required>
+                        <br>
+                        <br>
+                        <div>
+                            <button class="btn" type="submit">Get your Answer</button>
 
-                        <!-- formaction="/entrepreneur-save" -->
-                    </div>
-                    <div>
-                        <p id="response"></p>
-                    </div>
+                            <!-- formaction="/entrepreneur-save" -->
+                        </div>
+                        <div>
+                            <p id="response"></p>
+                        </div>
                 </form>
             </div>
         </div>
