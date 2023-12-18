@@ -58,20 +58,20 @@ async def Upload_Table(request: Request):
 async def Upload_Short(request:Request):
    return templates.TemplateResponse("Upload_doc_short.html",{"request":request})
 
-@app.get("/question", response_class=HTMLResponse)
-async def question(request: Request):
-   return templates.TemplateResponse("question.html", {"request": request})
+# @app.get("/question", response_class=HTMLResponse)
+# async def question(request: Request):
+#    return templates.TemplateResponse("question.html", {"request": request})
 
 @app.post("/uploadfile")
 async def uploadFile(request:Request,file: UploadFile = File(...), question: str = Form(...)):
    document = extract_text_func(file)
    value = await output(document,question)
-   return templates.TemplateResponse("result_long.html", {"request":request,"result_text": value})
+   return templates.TemplateResponse("result_long.html", {"request":request,"result_text": value,"question":question})
 
 @app.post("/uploadfiletable")
 async def uploadFileTable(request:Request,file: UploadFile = File(...), question: str = Form(...)):
-   answer = output_table()
-   return templates.TemplateResponse("result_tabular.html", {"request":request,"result_text": answer})
+   answer = output_table(file,question)
+   return templates.TemplateResponse("result_tabular.html", {"request":request,"result_text": answer,"question":question})
 
 
 @app.post("/uploadfileshort")

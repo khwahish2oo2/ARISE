@@ -7,7 +7,7 @@ import pandas as pd
 from datasets import load_dataset
 from sklearn.metrics import accuracy_score
 
-def output_table():
+def output_table(file,question):
     dataset_name = 'inria-soda/tabular-benchmark'
     config_name = 'clf_cat_road-safety'
     dataset = load_dataset(dataset_name, config_name, split="train")
@@ -58,40 +58,40 @@ def output_table():
     except KeyError as e:
         print("KeyError encountered:", e)
 
-    table = pd.read_excel("data_1.xlsx")
+    table = pd.read_excel(file)
     table = table.astype(str)
 
     table
 
     """**Questions for answering**"""
 
-    query = "Who has scored the highest runs?"
-    answer = tqa(table=table, query=query)["answer"]
+    # query = "Who has scored the highest runs?"
+    answer = tqa(table=table, query=question)["answer"]
 
     # Now you can print 'answer'
     print(answer)
 
-    """**Accuracy**"""
+    # """**Accuracy**"""
 
-    # Example evaluation dataset
-    eval_data = [
-        {"table": table, "question": "Who has scored the highest runs?", "answer": "Sachin Tendulkar"},
-        {"table": table, "question": "Virat Kohli's highest score?", "answer": "183"}
-        # Add more question-answer-table tuples
-    ]
+    # # Example evaluation dataset
+    # eval_data = [
+    #     {"table": table, "question": "Who has scored the highest runs?", "answer": "Sachin Tendulkar"},
+    #     {"table": table, "question": "Virat Kohli's highest score?", "answer": "183"}
+    #     # Add more question-answer-table tuples
+    # ]
 
-    # Generate predictions
-    true_answers = [item["answer"] for item in eval_data]
-    predicted_answers = []
+    # # Generate predictions
+    # true_answers = [item["answer"] for item in eval_data]
+    # predicted_answers = []
 
-    for item in eval_data:
-        inputs = tokenizer(table=item["table"], queries=item["question"], padding='max_length', return_tensors="pt")
-        outputs = model(**inputs)
-        predicted_answer = tokenizer.decode(outputs.logits.argmax(dim=-1)[0]).strip()
-        predicted_answers.append(predicted_answer)
+    # for item in eval_data:
+    #     inputs = tokenizer(table=item["table"], queries=item["question"], padding='max_length', return_tensors="pt")
+    #     outputs = model(**inputs)
+    #     predicted_answer = tokenizer.decode(outputs.logits.argmax(dim=-1)[0]).strip()
+    #     predicted_answers.append(predicted_answer)
 
-    # Calculate accuracy
-    accuracy = accuracy_score(true_answers, predicted_answers)
-    print("Model Accuracy:", accuracy)
+    # # Calculate accuracy
+    # accuracy = accuracy_score(true_answers, predicted_answers)
+    # print("Model Accuracy:", accuracy)
 
     return answer
