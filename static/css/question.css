@@ -16,6 +16,7 @@ body{
 .main{
     text-align: center;
     
+    
     /* flex-direction: column;
     position:absolute;
     top:20%;
@@ -26,7 +27,7 @@ body{
     
 }
 .answer{
-    /* border: 5px solid; */
+    /*  */
     margin: auto;
     width: 30%;
     padding: 10px;
