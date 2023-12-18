@@ -7,6 +7,7 @@ from fastapi.staticfiles import StaticFiles
 from long_format import output
 from tabular import output_table
 from utils import extract_text_func
+import os
 
 from firebase_admin import auth, db, initialize_app, credentials
 
@@ -70,7 +71,14 @@ async def uploadFile(request:Request,file: UploadFile = File(...), question: str
 
 @app.post("/uploadfiletable")
 async def uploadFileTable(request:Request,file: UploadFile = File(...), question: str = Form(...)):
-   answer = output_table(file,question)
+   if not os.path.exists("new_uploads"):
+        os.makedirs("new_uploads")
+   file_path = os.path.join("new_uploads", file.filename)
+
+   with open(file_path, "wb") as pdf_file:
+      pdf_file.write(file.file.read())
+   
+   answer = output_table(file_path,question)
    return templates.TemplateResponse("result_tabular.html", {"request":request,"result_text": answer,"question":question})
 
 
